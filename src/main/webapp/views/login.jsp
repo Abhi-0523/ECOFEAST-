@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <div class="logo">🌱 EcoFeast</div>
+            <a class="logo" href="${pageContext.request.contextPath}/">EcoFeast</a>
             <ul class="nav-links">
                 <li><a href="${pageContext.request.contextPath}/">Home</a></li>
                 <li><a href="${pageContext.request.contextPath}/register">Register</a></li>
@@ -20,9 +20,10 @@
 
     <div class="container">
         <div class="form-container">
-            <h2 style="text-align: center; color: #2ecc71; margin-bottom: 2rem;">User Login</h2>
+            <div class="form-header">
+                <h2>User Login</h2>
+            </div>
 
-            <!-- Error/Success Messages -->
             <% 
                 String error = (String) request.getAttribute("error");
                 String success = (String) request.getAttribute("success");
@@ -41,12 +42,12 @@
             <form action="${pageContext.request.contextPath}/login" method="POST">
                 <div class="form-group">
                     <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    <input type="email" id="email" name="email" required placeholder="Enter your email" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required placeholder="Enter your password">
+                    <input type="password" id="password" name="password" required placeholder="Enter your password" class="form-control">
                 </div>
 
                 <div class="form-group">
@@ -54,20 +55,20 @@
                 </div>
             </form>
 
-            <p style="text-align: center; margin-top: 1rem;">
-                Don't have an account? <a href="${pageContext.request.contextPath}/register" style="color: #2ecc71; text-decoration: none; font-weight: 600;">Register here</a>
+            <p class="form-footer">
+                Don't have an account? <a href="${pageContext.request.contextPath}/register" class="text-link">Register here</a>
             </p>
 
-            <p style="text-align: center; margin-top: 1rem; color: #7f8c8d; font-size: 0.9rem;">
-                <strong>Demo Credentials:</strong><br>
+            <p class="demo-hint">
+                <strong>Demo credentials:</strong><br>
                 Admin: admin@ecofeast.com / admin123<br>
-                User: john@example.com / user123
+                User: abhibasnet@gmail.com / user123
             </p>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 EcoFeast - Sustainable Food Redistribution System. All rights reserved.</p>
+        <p>&copy; 2026 EcoFeast - Sustainable Food Redistribution. All rights reserved.</p>
     </footer>
 </body>
 </html>
