@@ -1,0 +1,13 @@
+com\ecofeast\controllers\LogoutServlet.class
+com\ecofeast\models\FoodItem.class
+com\ecofeast\controllers\LoginServlet.class
+com\ecofeast\filters\RBACFilter.class
+com\ecofeast\controllers\AdminController.class
+com\ecofeast\util\DatabaseUtil.class
+com\ecofeast\EcoFeastApplication.class
+com\ecofeast\util\ValidationUtil.class
+com\ecofeast\controllers\UserController.class
+com\ecofeast\models\Request.class
+com\ecofeast\controllers\RegisterServlet.class
+com\ecofeast\models\User.class
+com\ecofeast\util\PasswordUtil.class
