@@ -1,11 +1,7 @@
 package com.ecofeast.controllers;
 
-import com.ecofeast.models.FoodItem;
 import com.ecofeast.models.User;
-import com.ecofeast.service.FoodService;
 import com.ecofeast.service.UserService;
-import com.ecofeast.util.DatabaseUtil;
-import com.ecofeast.util.PasswordUtil;
 import com.ecofeast.util.ValidationUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;

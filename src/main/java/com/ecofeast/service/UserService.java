@@ -1,8 +1,6 @@
 package com.ecofeast.service;
 
 import com.ecofeast.models.User;
-import com.ecofeast.util.DatabaseUtil;
-import com.ecofeast.util.PasswordUtil;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
