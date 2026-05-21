@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+         https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <display-name>EcoFeast - Sustainable Food Redistribution System</display-name>
+
+    <!-- SERVLET FILTERS - Auth and RBAC Filter -->
+    <filter>
+        <filter-name>AuthFilter</filter-name>
+        <filter-class>com.ecofeast.filter.AuthFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>AuthFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- LOGIN SERVLET -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.ecofeast.controllers.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+
+    <!-- REGISTER SERVLET -->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>com.ecofeast.controllers.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!-- LOGOUT SERVLET -->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>com.ecofeast.controllers.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+
+    <!-- ADMIN CONTROLLER SERVLET -->
+    <servlet>
+        <servlet-name>AdminController</servlet-name>
+        <servlet-class>com.ecofeast.controllers.AdminController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminController</servlet-name>
+        <url-pattern>/admin</url-pattern>
+        <url-pattern>/admin/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- DONOR CONTROLLER SERVLET -->
+    <servlet>
+        <servlet-name>DonorController</servlet-name>
+        <servlet-class>com.ecofeast.controllers.DonorController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DonorController</servlet-name>
+        <url-pattern>/donor</url-pattern>
+        <url-pattern>/donor/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- NGO CONTROLLER SERVLET -->
+    <servlet>
+        <servlet-name>NgoController</servlet-name>
+        <servlet-class>com.ecofeast.controllers.NgoController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>NgoController</servlet-name>
+        <url-pattern>/ngo</url-pattern>
+        <url-pattern>/ngo/*</url-pattern>
+    </servlet-mapping>
+
+    <!-- VOLUNTEER CONTROLLER SERVLET -->
+    <servlet>
+        <servlet-name>VolunteerController</servlet-name>
+        <servlet-class>com.ecofeast.controllers.VolunteerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VolunteerController</servlet-name>
+        <url-pattern>/volunteer</url-pattern>
+        <url-pattern>/volunteer/*</url-pattern>
+    </servlet-mapping>
+
+
+
+    <!-- PROFILE CONTROLLER SERVLET -->
+    <servlet>
+        <servlet-name>ProfileController</servlet-name>
+        <servlet-class>com.ecofeast.controllers.ProfileController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProfileController</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+
+    <!-- CONTACT CONTROLLER SERVLET -->
+    <servlet>
+        <servlet-name>ContactController</servlet-name>
+        <servlet-class>com.ecofeast.controllers.ContactController</servlet-class>
+        <!-- Allows multipart clients; default form POST remains urlencoded. -->
+        <multipart-config>
+            <max-file-size>1048576</max-file-size>
+            <max-request-size>5242880</max-request-size>
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContactController</servlet-name>
+        <url-pattern>/contact</url-pattern>
+    </servlet-mapping>
+
+    <!-- ERROR PAGES -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/views/error.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>500</error-code>
+        <location>/views/error.jsp</location>
+    </error-page>
+
+    <!-- SESSION CONFIGURATION -->
+    <session-config>
+        <session-timeout>30</session-timeout>
+        <cookie-config>
+            <http-only>true</http-only>
+            <secure>false</secure> <!-- Set to true in production with HTTPS -->
+        </cookie-config>
+        <tracking-mode>COOKIE</tracking-mode>
+    </session-config>
+
+    <!-- WELCOME FILES -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
